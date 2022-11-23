@@ -37,12 +37,18 @@ public class FracCalc {
             //addition
             if (!(("" +(secondFractionDenomenator * firstFractionNumerator)+( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole+secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator))).equals("0")){
                 finalnumber = (((secondFractionDenomenator * firstFractionNumerator)+( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole+secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator))+"/"+(firstFractionDenomenator*secondFractionDenomenator));
-            }else{
-                finalnumber = "0";
             }
             if ((firstFractionDenomenator*secondFractionDenomenator) == 1){
-                finalnumber =(""+ (secondFractionDenomenator * firstFractionNumerator)+( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole+secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator));
+                finalnumber =(""+ ((secondFractionDenomenator * firstFractionNumerator)+( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole+secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator)));
             }
+            else{
+                finalnumber = "0";
+            }
+/*
+            if (finalnumber.charAt(0) == 0 && finalnumber.charAt(1)==0){
+                finalnumber = finalnumber.substring(2,finalnumber.length());
+            }
+*/
 
         } else if (operator.equals("-")) {
             //subtraction
@@ -64,6 +70,9 @@ public class FracCalc {
             //division
             if (((firstFractionWhole*firstFractionDenomenator)+(firstFractionNumerator))*(secondFractionDenomenator) == 0){
                 finalnumber = "0";
+            }else if(((firstFractionWhole*firstFractionDenomenator)+(firstFractionNumerator))*(secondFractionDenomenator) == ((firstFractionDenomenator) * ((secondFractionWhole * secondFractionDenomenator) + secondFractionNumerator))){
+                finalnumber = "1";
+
             }else {
                 finalnumber = (((firstFractionWhole * firstFractionDenomenator) + (firstFractionNumerator)) * (secondFractionDenomenator) + "/" + (firstFractionDenomenator) * ((secondFractionWhole * secondFractionDenomenator) + secondFractionNumerator));
             }
