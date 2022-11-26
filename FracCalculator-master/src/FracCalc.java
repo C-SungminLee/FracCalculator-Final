@@ -26,6 +26,8 @@ public class FracCalc {
         //return (secondFraction);
         //return("whole:"+findWhole(secondFraction)+" numerator:"+findNumerator(secondFraction)+" denominator:"+findDenomenator(secondFraction));
 
+
+
         int firstFractionWhole = Integer.parseInt(findWhole(firstFraction));
         int firstFractionNumerator = Integer.parseInt(findNumerator(firstFraction));
         int firstFractionDenomenator = Integer.parseInt(findDenomenator(firstFraction));
@@ -33,6 +35,33 @@ public class FracCalc {
         int secondFractionNumerator = Integer.parseInt(findNumerator(secondFraction));
         int secondFractionDenomenator = Integer.parseInt(findDenomenator(secondFraction));
         String finalnumber = "";
+
+        //checkpoint 3
+        if (operator.equals("+")) {
+            //addition
+            finalnumber = (((secondFractionDenomenator * firstFractionNumerator)+( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole+secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator))+"/"+(firstFractionDenomenator*secondFractionDenomenator));
+        } else if (operator.equals("-")) {
+            //subtraction
+            finalnumber =(((secondFractionDenomenator * firstFractionNumerator)-( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole-secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator))+"/"+(firstFractionDenomenator*secondFractionDenomenator));
+        } else if (operator.equals("*")) {
+            finalnumber = ((((firstFractionWhole * firstFractionDenomenator) + (firstFractionNumerator)) * ((secondFractionWhole * secondFractionDenomenator) + (secondFractionNumerator))) + "/" + (firstFractionDenomenator * secondFractionDenomenator));
+        } else if (operator.equals("/")) {
+            //division
+            finalnumber = (((firstFractionWhole * firstFractionDenomenator) + (firstFractionNumerator)) * (secondFractionDenomenator) + "/" + (firstFractionDenomenator) * ((secondFractionWhole * secondFractionDenomenator) + secondFractionNumerator));
+        }
+
+        return finalnumber;
+    }
+
+
+        /*
+        // Final
+
+
+
+
+
+
         if (operator.equals("+")) {
             //addition
             if (!(("" +(secondFractionDenomenator * firstFractionNumerator)+( firstFractionDenomenator * secondFractionNumerator)+(firstFractionWhole+secondFractionWhole)*(firstFractionDenomenator*secondFractionDenomenator))).equals("0")){
@@ -44,11 +73,9 @@ public class FracCalc {
             else{
                 finalnumber = "0";
             }
-/*
             if (finalnumber.charAt(0) == 0 && finalnumber.charAt(1)==0){
                 finalnumber = finalnumber.substring(2,finalnumber.length());
             }
-*/
 
         } else if (operator.equals("-")) {
             //subtraction
@@ -79,7 +106,7 @@ public class FracCalc {
             }
 
         return finalnumber;
-    }
+    }*/
 
 
 
