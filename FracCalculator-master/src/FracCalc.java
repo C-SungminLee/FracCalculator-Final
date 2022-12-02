@@ -1,3 +1,14 @@
+/**
+* The FracCalc program recieves fraction operations and calculates it, then it returns 
+* the correct result
+* @author  Sungmin Lee
+* @version final (?)
+* @since   2022-12-02 
+*/
+
+
+
+
 import java.util.Scanner;
 public class FracCalc {
 
